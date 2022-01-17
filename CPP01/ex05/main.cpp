@@ -14,5 +14,6 @@ int main(void)
     karen.complain("WARNING");
     std::cout << "ERROR\t: ";
     karen.complain("ERROR");
+    karen.complain("hello");
     return (0);
 }

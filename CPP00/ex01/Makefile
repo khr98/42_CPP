@@ -1,7 +1,7 @@
 NAME = phonebook
 
-CC = clang++
-CFLAGS = -Wall -Wextra -Werror
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror
 
 OBJS_DIR = ./objs
 
@@ -19,13 +19,13 @@ RM = rm -f
 all : $(NAME)
 
 $(NAME) : $(OBJS)
-	@$(CC) $(CFLAGS) -o $@ $^
+	@$(CXX) $(CXXFLAGS) -o $@ $^
 
 $(OBJS_DIR) :
 	@mkdir -p $(OBJS_DIR)
 
 $(OBJS_DIR)/%.o : %.cpp | $(OBJS_DIR)
-	@$(CC) $(CFLAGS) -o $@ -I./$(INCS) -c $^
+	@$(CXX) $(CXXFLAGS) -o $@ -I./$(INCS) -c $^
 
 clean :
 	@$(RM) -r $(OBJS_DIR)

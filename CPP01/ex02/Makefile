@@ -1,31 +1,27 @@
-NAME = hi_brain
+NAME	=	Brain
+CXX		=	c++
+CXXFLAGS	=	-Wall -Wextra -Werror
 
-CC = clang++
-CFLAGS = -Wall -Wextra -Werror
+SRC		=	main.cpp
 
-OBJS_DIR = ./objs
+RM		=	rm -rf
 
-SRCS =	./main.cpp
+OBJ		=	$(SRC:.cpp=.o)
 
-OBJS = $(addprefix $(OBJS_DIR)/, $(notdir $(SRCS:.cpp=.o)))
+%.o		:	%.cpp
+			$(CXX) $(CXXFLAGS) -c $< -o $@
 
-RM = rm -f
+$(NAME)	:	$(OBJ)
+			$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
-all : $(NAME)
+all		:	$(NAME)
 
-$(NAME) : $(OBJS)
-	@$(CC) $(CFLAGS) -o $@ $^
+clean	:
+			$(RM) $(OBJ)
 
-$(OBJS_DIR) :
-	@mkdir -p $(OBJS_DIR)
+fclean	:	clean
+			$(RM) $(NAME)
 
-$(OBJS_DIR)/%.o : %.cpp | $(OBJS_DIR)
-	@$(CC) $(CFLAGS) -o $@ -c $^
+re		:	fclean all
 
-clean :
-	@$(RM) -r $(OBJS_DIR)
-
-fclean : clean
-	@$(RM) $(NAME)
-
-re : fclean all
+.PHONY	:	all clean fclean re

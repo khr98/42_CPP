@@ -2,7 +2,6 @@
 
 Zombie::Zombie()
 {
-    std::cout << "This is default constructor" << std::endl;
 }
 
 Zombie::Zombie(std::string _name)

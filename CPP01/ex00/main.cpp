@@ -2,12 +2,13 @@
 
 int main()
 {
-    Zombie zom = Zombie("Wonpil");
-    Zombie *bie;
+    Zombie *zom;
 
-    zom.announce();
-    bie = newZombie("YoungK");
-    bie->announce();
-    randomChump("Day6");
-    delete bie;
+    std::cout << "---------------------------" << std::endl;
+    zom = newZombie("hyerkim");
+    zom->announce();
+    delete zom;
+    std::cout << "---------------------------" << std::endl;
+    randomChump("kimhyerim");
+    return (0);
 }

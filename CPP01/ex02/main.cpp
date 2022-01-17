@@ -4,7 +4,7 @@ int main()
 {
     std::string str = "HI THIS IS BRAIN";
     std::string *stringPTR;
-    std::string &stringREF = str; //참조형 변수
+    std::string &stringREF = str;
 
     stringPTR = &str;
     std::cout << "string     : " << &str << std::endl;

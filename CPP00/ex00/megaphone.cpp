@@ -20,12 +20,12 @@ int main(int argc, char *argv[])
     i = 0;
     if (argc == 1)
     {
-        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
+        std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *\n";
         return (0);
     }
     while (argv[++i])
     {
-        std::cout << upper(argv[i]);
+        std::cout << upper(argv[i]) << '\n';
     }
     return 0;
 }
